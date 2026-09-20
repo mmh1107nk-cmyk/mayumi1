@@ -1,1 +1,106 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IPアドレスとレコメンドを体験しよう</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="hero">
+    <div class="badge">授業用・体験型Webアプリ</div>
+    <h1>「なぜ、迷わずおすすめが届くの？」</h1>
+    <p>IPアドレスと行動データ、レコメンドの仕組みをゲーム感覚で体験しよう</p>
+  </header>
 
+  <main>
+    <section class="card intro">
+      <h2>まず知っておこう</h2>
+      <p><strong>IPアドレスだけで「あなたの好み」が分かるわけではありません。</strong></p>
+      <div class="flow">
+        <div class="flow-item"><span>①</span><b>IPアドレス</b><small>ネットワーク・地域などの推測材料</small></div>
+        <div class="arrow">＋</div>
+        <div class="flow-item"><span>②</span><b>行動データ</b><small>見る・最後まで見る・いいね等</small></div>
+        <div class="arrow">＋</div>
+        <div class="flow-item"><span>③</span><b>似た人のデータ</b><small>似た傾向の人の行動</small></div>
+        <div class="arrow">→</div>
+        <div class="flow-item result"><span>④</span><b>おすすめ</b><small>次に見そうな動画を予測</small></div>
+      </div>
+    </section>
+
+    <section class="card">
+      <div class="section-title">
+        <div>
+          <span class="step">STEP 1</span>
+          <h2>IPアドレスの役割を体験</h2>
+        </div>
+        <button id="ipButton" class="primary">IP情報を確認する</button>
+      </div>
+
+      <div id="ipResult" class="ip-panel hidden">
+        <div class="ip-big"><span id="ipAddress">192.168.1.24</span></div>
+        <div class="ip-grid">
+          <div><span>ネットワーク</span><b id="networkText">学校・家庭などのネットワーク</b></div>
+          <div><span>地域の目安</span><b>IPだけでは正確な住所は分かりません</b></div>
+          <div><span>分かること</span><b>通信相手を識別するための住所情報</b></div>
+        </div>
+        <p class="note">※この教材では安全のため、IPアドレスの役割を疑似的に体験します。IPアドレスだけから個人の好みを判断することはできません。</p>
+      </div>
+    </section>
+
+    <section class="card">
+      <div class="section-title">
+        <div>
+          <span class="step">STEP 2</span>
+          <h2>あなたの「行動データ」を作ってみよう</h2>
+        </div>
+        <div class="score-box">興味スコア <strong id="totalScore">0</strong></div>
+      </div>
+
+      <p>気になる動画をクリックしてください。クリック回数や「最後まで見た」などの反応が、レコメンドの材料になるイメージです。</p>
+
+      <div class="video-grid" id="videoGrid"></div>
+    </section>
+
+    <section class="card">
+      <div class="section-title">
+        <div>
+          <span class="step">STEP 3</span>
+          <h2>AIが「次に見そうな動画」を予測</h2>
+        </div>
+        <button id="recommendButton" class="primary">おすすめを計算する</button>
+      </div>
+
+      <div id="recommendResult" class="recommend-area">
+        <div class="empty">STEP 2で動画を選ぶと、あなた向けのおすすめが表示されます。</div>
+      </div>
+    </section>
+
+    <section class="card">
+      <span class="step">STEP 4</span>
+      <h2>仕組みを整理しよう</h2>
+      <div class="concept-grid">
+        <article><div class="icon">🌐</div><h3>IPアドレス</h3><p>インターネット上の通信先を識別するための情報。地域などの推測材料になる場合があります。</p></article>
+        <article><div class="icon">👀</div><h3>行動データ</h3><p>何を見たか、どれくらい見たか、いいね等の反応。好みを推測する重要な材料です。</p></article>
+        <article><div class="icon">🤝</div><h3>協調フィルタリング</h3><p>「あなたと似た行動をした人」が好んだものを参考にする考え方です。</p></article>
+        <article><div class="icon">🤖</div><h3>レコメンド</h3><p>多くの候補をスコアリングし、「次に見そうなもの」を順位付けして表示します。</p></article>
+      </div>
+    </section>
+
+    <section class="card experiment">
+      <h2>🎯 実験：行動を変えるとおすすめも変わる？</h2>
+      <p>いったんページをリセットして、今度は違うジャンルを中心にクリックしてみましょう。</p>
+      <button id="resetButton" class="secondary">行動データをリセット</button>
+      <div id="dataLog" class="data-log">まだ行動データはありません。</div>
+    </section>
+
+    <section class="summary">
+      <h2>今日の一文</h2>
+      <p>動画サービスは、<strong>IPアドレスだけで好みを判断しているのではなく</strong>、視聴・反応などの行動データや、似たユーザーの傾向などを組み合わせて、次に見そうな動画を予測しています。</p>
+    </section>
+  </main>
+
+  <footer>GitHub Pagesで公開できる3ファイル構成：index.html / style.css / script.js</footer>
+  <script src="script.js"></script>
+</body>
+</html>
